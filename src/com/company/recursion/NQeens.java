@@ -15,6 +15,7 @@ public class NQeens {
         cols = new int[n + 1];
     }
 
+    //level 0부터 시작하는데 0에서 1번말 확정, 1에서 2번말 확정,,,,,7(n-1)에서 8번말 확정
     public boolean queens(int level) {
         if (!promising(level)) { //더이상 아래 노드를 탐색할 필요가 없는 경우(infeasible)
             return false;

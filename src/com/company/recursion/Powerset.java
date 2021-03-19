@@ -2,6 +2,7 @@ package com.company.recursion;
 
 /*
  * 멱집합(모든 부분집합의 집합을 구하기)
+ * a를 예시로 들어서 쭉 생각해보면 이해하기 쉽다.
  * */
 public class Powerset {
 
