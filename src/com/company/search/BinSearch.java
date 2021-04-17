@@ -2,7 +2,7 @@ package com.company.search;
 
 import java.util.Scanner;
 
-//이진 검색(binary search):
+// 이진 검색(binary search):
 // 오름 or 내림 차순으로 정렬된 배열에서
 // 중간값을 이용해 범위를 좁혀나가며 검색하는 기법
 public class BinSearch {

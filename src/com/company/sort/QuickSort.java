@@ -51,6 +51,8 @@ public class QuickSort {
         int arr[] = {6,3,3,7,1,21,3,7,2,25};
         quickSort(arr, 0, arr.length-1);
         printArr(arr);
+
+        System.out.println(9/2 + "");
     }
 
     private static void printArr(int[] arr) {

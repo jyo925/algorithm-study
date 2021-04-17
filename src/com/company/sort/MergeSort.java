@@ -22,7 +22,8 @@ public class MergeSort {
         int i = l;
         int j = mid + 1;
         int k = l;
- 
+
+        //추가 배열 필요
         int temp[] = new int[arr.length];
  
         while (i <= mid && j <= r) {

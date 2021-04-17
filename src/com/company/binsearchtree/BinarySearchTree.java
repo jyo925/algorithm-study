@@ -1,0 +1,57 @@
+package com.company.binsearchtree;
+
+/**
+ * 이진 검색 트리 구현
+ * 1. Dynamic Set을 트리 형태로 구현(Search, Insert, Delete)
+ * 2. 이진 트리처럼 순회 기능도 포함하기
+ */
+public class BinarySearchTree {
+
+    private TreeNode root = new TreeNode();
+
+    public TreeNode insertKey(TreeNode root, char x) {
+        TreeNode p = root;
+        TreeNode newNode = new TreeNode(x);
+
+        if(p==null){
+            return newNode;
+        }else if(p.data>newNode.data){
+            p.left = insertKey(p.left, x);
+            return p;
+        }else if(p.data<newNode.data){
+            p.right = insertKey(p.right, x);
+            return p;
+        }else{
+            return p;
+        }
+    }
+
+    public void insertBST(char x){
+        root = insertKey(root, x);
+    }
+
+    public TreeNode searchBST(char x){
+        TreeNode p = root;
+        while(p!=null){
+            if(x<p.data) p = p.left;
+            else if(x>p.data) p = p.right;
+            else return p;
+        }
+        return p;
+    }
+
+    public void inorder(TreeNode root){
+        if(root!=null){
+            inorder(root.left);
+            System.out.print(root.data + " ");
+            inorder(root.right);
+        }
+    }
+
+    public void printBST(){
+        inorder(root);
+        System.out.println();
+    }
+
+
+}

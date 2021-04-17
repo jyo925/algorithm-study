@@ -1,5 +1,8 @@
 package com.company.binsearchtree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTreeTest {
 
 
@@ -30,8 +33,24 @@ public class BinaryTreeTest {
         }
     }
 
-    public static void main(String[] args) {
+    public static void levelorderTreeTraversal(BinaryTree.Node<String> start) {
+        Queue<BinaryTree.Node> queue = new LinkedList<>();
+        queue.add(start);
 
+        while (!queue.isEmpty()) {
+            BinaryTree.Node pollData = queue.poll();
+            System.out.print(pollData.data +" ");
+            if (pollData.left != null) {
+                queue.add(pollData.left);
+            }
+            if (pollData.right != null) {
+                queue.add(pollData.right);
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
 
         BinaryTree<String> fox =
                 new BinaryTree(new BinaryTree.Node<String>("fox"));
@@ -46,12 +65,8 @@ public class BinaryTreeTest {
         fox.root.right.right = new BinaryTree.Node<>("hippo");
         fox.root.right.right.right = new BinaryTree.Node<>("iguana");
 
-
 //        inorderTreeWalk(fox.root);
-        preorderTreeWalk(fox.root);
-
-
-
-
+//        preorderTreeWalk(fox.root);
+        levelorderTreeTraversal(fox.root);
     }
 }

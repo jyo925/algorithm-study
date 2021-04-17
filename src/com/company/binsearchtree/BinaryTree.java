@@ -27,6 +27,7 @@ public class BinaryTree<E> {
     protected BinaryTree(Node<E> root) {
         this.root = root;
     }
+
     public BinaryTree(E data, BinaryTree<E> leftTree, BinaryTree<E> rightTree) {
 
         root = new Node<E>(data);
