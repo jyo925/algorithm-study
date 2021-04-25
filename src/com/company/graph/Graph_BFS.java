@@ -14,17 +14,15 @@ import java.util.Queue;
  * -> bfs를 반복호출해서 해결하기
  * -> while there exists unvisited node v ====> bfs(v)
  */
-public class Graph {
+public class Graph_BFS {
 
     class Node {
         private int data;
-        //        private boolean visited; //방문여부
         private LinkedList<Node> adjacent; //인접리스트
 
         public Node(int data) {
             this.data = data;
-//            this.visited = false;
-            adjacent = new LinkedList<Node>();
+            this.adjacent = new LinkedList<Node>();
         }
 
         public int getData() {
@@ -35,21 +33,6 @@ public class Graph {
             return adjacent;
         }
 
-//        public boolean getVisited() {
-//            return visited;
-//        }
-
-        public void setData(int data) {
-            this.data = data;
-        }
-
-//        public void setVisited(boolean visited) {
-//            this.visited = visited;
-//        }
-
-        public void setAdjacent(LinkedList<Node> adjacent) {
-            this.adjacent = adjacent;
-        }
     }
 
     private Node[] nodes;
@@ -58,7 +41,7 @@ public class Graph {
 
     private Node[] predecessor; // 최단경로 상에서 각 노드의 직전 노드 번호(predecessor)
 
-    public Graph(int size) {
+    public Graph_BFS(int size) {
         nodes = new Node[size];
         for (int i = 0; i < size; i++) {
             nodes[i] = new Node(i);
@@ -137,7 +120,7 @@ public class Graph {
 
     public static void main(String[] args) {
 
-        Graph g = new Graph(9);
+        Graph_BFS g = new Graph_BFS(9);
  /*
         //노드 삽입 확인
         Node[] tmp = bfs.getNodes();
